@@ -6,31 +6,32 @@
 
         static void Main(string[] args)
         {
-            // declare and initilize array grades
-            int[] grades = new int[5];
+            int[] nums = new int[10];
 
-            grades[0] = 20;
-            grades[1] = 15;
-            grades[2] = 12;
-            grades[3] = 9;
-            grades[4] = 22;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                nums[i] = i + 10;
 
-            Console.WriteLine("grades at index 0: {0}",grades[0]);
-           
+            }
 
-            string input = Console.ReadLine();
-            // assign value to array  grades at index 0
-            grades[0] = int.Parse(input); 
-            Console.WriteLine("grades at index 0: {0}", grades[0]);
+            for(int j = 0; j < nums.Length; j++)
+            {
+                nums[j] = j + 10;
+                Console.WriteLine("Element{0} = {1}", j, nums[j]);
+            }
 
-            // another way of initializing an array
-            int[] gradesOfMathStudentsA = {20,13,12,8,9,10};
+            int counter = 0;
+            foreach (int k in nums)
+            {
+                Console.WriteLine("Element{0} = {1}", counter, k);
+                counter++;
 
-            // thrid way of initiakizing an array
-            int[] gradesOfMathStudentsB = new int[] {20,13,12,8,10};
+            }
 
-            Console.WriteLine("Lenght of gradeOfMathStudnesA: {0}", gradesOfMathStudentsA.Length); 
-            Console.ReadLine() ;
+
+            Console.ReadKey();
+
+            
 
 
 
