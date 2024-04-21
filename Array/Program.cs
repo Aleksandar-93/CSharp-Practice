@@ -6,36 +6,14 @@
 
         static void Main(string[] args)
         {
-            int[] nums = new int[10];
+            string[] myFriends = { "pera", "mika", "laza", "zika", "zoka" };
 
-            for (int i = 0; i < nums.Length; i++)
+            foreach (string friend in myFriends)
             {
-                nums[i] = i + 10;
-
+                Console.WriteLine("Hi there {0}, my friend", friend);
             }
-
-            for(int j = 0; j < nums.Length; j++)
-            {
-                nums[j] = j + 10;
-                Console.WriteLine("Element{0} = {1}", j, nums[j]);
-            }
-
-            int counter = 0;
-            foreach (int k in nums)
-            {
-                Console.WriteLine("Element{0} = {1}", counter, k);
-                counter++;
-
-            }
-
 
             Console.ReadKey();
-
-            
-
-
-
-
 
 
         }
