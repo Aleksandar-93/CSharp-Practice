@@ -6,16 +6,24 @@
 
         static void Main(string[] args)
         {
-            string[] myFriends = { "pera", "mika", "laza", "zika", "zoka" };
+            //declare 2D Arrey
+            string[,] matrix;
 
-            foreach (string friend in myFriends)
+            // 3D array
+            int[,,] threeD;
+
+            //two dimensial array
+            int[,] array2D = new int[,]
             {
-                Console.WriteLine("Hi there {0}, my friend", friend);
-            }
+                {1,2,3,}, 
+                {4,5,6,},
+                {5,6,7,}
+            };
+
+            Console.WriteLine("Centaral value is {0}", array2D[1,1]);
+            Console.WriteLine("Centaral value is {0}", array2D[2,2]);
 
             Console.ReadKey();
-
-
         }
 
 
