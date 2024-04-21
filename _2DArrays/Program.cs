@@ -15,28 +15,9 @@
 
         static void Main(string[] args)
         {
-            foreach (int item in matrix)
+            for (int i = 0, j = 2; i < matrix.GetLength(0); i++, j--)
             {
-                Console.Write(item + " ");
-            }
-
-            Console.WriteLine("\nthis is our 2D array prited using nested for loop");
-            //outer for loop
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                // inner for loop
-                for (int j = 0; j < matrix.GetLength(1); j++)
-                {
-                    if (i == j )
-                    {
-                        Console.Write(matrix[i, j] + " ");
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                    }
-                    Console.WriteLine("");
-                }
+                Console.WriteLine(matrix[i,j]);
             }
 
         }
