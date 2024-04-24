@@ -9,6 +9,14 @@
             int[] stundentsGrade = new int[] { 15, 13, 8, 12, 6, 16 };
             double avrageResult = GetAvrage(stundentsGrade);
 
+            int[] happiness = { 2, 3, 4, 5, 6 };
+            SunIsShining(happiness);
+
+            foreach (int i in happiness)
+            {
+                Console.WriteLine(i);
+            }
+
             foreach(int grade in stundentsGrade)
             {
                 Console.WriteLine("{0}",grade);
@@ -35,6 +43,14 @@
             return avrage;
 
 
+        }
+
+        static void SunIsShining(int[] x)
+        {
+            for(int i = 0;i < x.Length;i++)
+            {
+                x[i] += 2;
+            }
         }
 
 
