@@ -4,39 +4,29 @@
     {
         static void Main(string[] args)
         {
-            int price = 50;
-            float pi = 3.14f;
-            char at = '@';
-            string book = "The Hobbit";
 
+            //int min = MinV2(6, 4, 2, 8, 0, 1, 5); // here we passed 7 values
+            int min = MinV2(5, 1, 0, -11, 40); //same method but this time 5 values
 
-            Console.WriteLine("Price is {0}, pi is {1}, at is {2}",32,3.14,'@');
-            Console.WriteLine("{0}+{1}+{2}={3}",1,2,3,1+2+3);
-            Console.WriteLine("///////////////////////////////////////////////////////");
-
-            ParamsMethod("This", "is", "a", "long", "string", "I", "have", "no", "idea", "when", "it's", "going", "to", "end",".....");
-            ParamsMethod2(price, pi, at, book);
-            ParamsMethod2("hello", 5.3, '$');
+            Console.WriteLine("The minimum is :{0} ", min);
 
         }
 
-        public static void ParamsMethod(params string[] sentance)
+        public static int MinV2(params int[] numbers)
         {
-            for (int i = 0; i < sentance.Length; i++)
-            {
-                Console.Write(sentance[i] + " ");
-            }
-            Console.WriteLine();
+            int min = int.MaxValue;
 
-        }
-        public static void ParamsMethod2(params object[] stuff)
+            foreach (int number in numbers)
             {
-                foreach(object obj in stuff)
+                if (number < min)
                 {
-                    Console.Write(obj + " ");
+                    min = number;
                 }
+            }
+            return min;
 
         }
+
 
     }
 }
