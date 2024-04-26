@@ -8,7 +8,7 @@ namespace Hashtables
 
         static void Main(string[] args)
         {
-
+            
             Hashtable studentsTable = new Hashtable();
 
             Student stud1 = new Student(1, "Maria", 98);
@@ -42,6 +42,32 @@ namespace Hashtables
             }
 
             Console.WriteLine("Student ID:{0}, Name:{1}, GPA{2}", storedStudent1.id, storedStudent1.name, storedStudent1.GPA);
+
+            Console.WriteLine("--------------------CHallnge------------------");
+
+            Hashtable table = new Hashtable();
+
+
+            Student[] students = new Student[5];
+            students[0] = new Student(1, "Denis", 88);
+            students[1] = new Student(2, "Olaf", 97);
+            students[2] = new Student(3, "Ragnar", 65);
+            students[3] = new Student(1, "Luise", 73);
+            students[4] = new Student(5, "Levi", 58);
+
+            foreach(Student s in students)
+            {
+                if (!table.ContainsKey(s.id))
+                {
+                    table.Add(s.id, s);
+                    Console.WriteLine("Student wutg ID{0} was Added!", s.id);
+                }
+                else
+                {
+                    Console.WriteLine("Sorry, a student with the same ID alredy exist ID:{0}",s.id);
+                }
+            }
+
         }
     }
 
