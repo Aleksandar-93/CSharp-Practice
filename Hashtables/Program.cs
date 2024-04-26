@@ -21,7 +21,25 @@ namespace Hashtables
             studentsTable.Add(stud3.id, stud3);
             studentsTable.Add(stud4.id, stud4);
 
+            // retrive invidual item wihh known ID
             Student storedStudent1 = (Student)studentsTable[1];
+
+            // retrive all value from hashtable
+            foreach(DictionaryEntry entry in studentsTable)
+            {
+                Student temp = (Student)entry.Value;
+                Console.WriteLine("Student ID: {0}",temp.id);
+                Console.WriteLine("Student Name: {0}", temp.name);
+                Console.WriteLine("Student GPA: {0}", temp.GPA);
+
+            }
+            Console.WriteLine("/////////////////");
+            foreach (Student value in studentsTable.Values)
+            {
+                Console.WriteLine("Student ID: {0}", value.id);
+                Console.WriteLine("Student Name: {0}", value.name);
+                Console.WriteLine("Student GPA: {0}", value.GPA);
+            }
 
             Console.WriteLine("Student ID:{0}, Name:{1}, GPA{2}", storedStudent1.id, storedStudent1.name, storedStudent1.GPA);
         }
