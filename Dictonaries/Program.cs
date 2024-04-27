@@ -27,17 +27,33 @@ namespace Dictonaries
             Dictionary<int, string> myDictionary = new Dictionary<int, string>();
 
 
-            Dictionary<string,Employee> employeesDirectory = new Dictionary<string, Employee>();
-           
+            Dictionary<string, Employee> employeesDirectory = new Dictionary<string, Employee>();
+
             foreach (Employee emp in employees)
             {
                 employeesDirectory.Add(emp.Role, emp);
 
             }
 
+            for (int i = 0;i < employeesDirectory.Count; i++)
+            {
+                //using ElementAt(i) to return the ket-value pair stored at index i
+                KeyValuePair<string,Employee> keyValuePair = employeesDirectory.ElementAt(i);
+                // print the key
+                Console.WriteLine("Key: {0}", keyValuePair.Key);
+                //storing the calue in a employe object
+                Employee employeeValue = keyValuePair.Value;
+                //printing the properies of the employe object
+                Console.WriteLine("Employee name: {0}",employeeValue.Name);
+                Console.WriteLine("Employee Role: {0}", employeeValue.Role);
+                Console.WriteLine("Employee Age: {0}", employeeValue.Age);
+                Console.WriteLine("Employee Salery: {0}", employeeValue.Salery);
+
+            }
+
             string key = "CEO";
 
-            if(employeesDirectory.ContainsKey(key))
+            if (employeesDirectory.ContainsKey(key))
             {
                 Employee empl = employeesDirectory["CEO"];
                 Console.WriteLine("Employee Name: {0}, Role: {1}, Salery: {2}", empl.Name, empl.Role, empl.Salery);
@@ -47,7 +63,23 @@ namespace Dictonaries
                 Console.WriteLine("No employee found with this key{0}", key);
             }
 
-            
+
+            Employee result = null;
+            if (employeesDirectory.TryGetValue("Intern", out result))
+            {
+                Console.WriteLine("Value Retrived!");
+
+                Console.WriteLine("Employee name: {0}", result.Name);
+                Console.WriteLine("Employee Role: {0}", result.Role);
+                Console.WriteLine("Employee Age: {0}", result.Age);
+                Console.WriteLine("Employee Salery: {0}", result.Salery);
+
+            }else
+            {
+                Console.WriteLine("The ket does not exist");
+            }
+
+
 
         }
     }
