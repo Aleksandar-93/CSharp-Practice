@@ -34,6 +34,29 @@ namespace Dictonaries
                 employeesDirectory.Add(emp.Role, emp);
 
             }
+            // update Employee 
+            string KeyToUpdate = "HR";
+            if(employeesDirectory.ContainsKey(KeyToUpdate))
+            {
+                employeesDirectory[KeyToUpdate] = new Employee("HR", "Eleka", 26, 18);
+                Console.WriteLine("Employee with Role/Key{0} was updated!", KeyToUpdate);
+            }
+            else
+            {
+                Console.WriteLine("No employe found with this key {0}", KeyToUpdate);
+            }
+
+            //Remove item from employee dictionery
+            string keyToRemove = "Intern";
+            if(employeesDirectory.Remove(keyToRemove))
+            {
+                Console.WriteLine("Employee with Role/Key{0} was Removed!", keyToRemove);
+
+            }
+            else
+            {
+                Console.WriteLine("No employe found with this key {0}", keyToRemove);
+            }
 
             for (int i = 0;i < employeesDirectory.Count; i++)
             {
