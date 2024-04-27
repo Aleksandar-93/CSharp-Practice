@@ -25,6 +25,30 @@ namespace Stacks
                 Console.WriteLine("Current stack count is : {0}", stack.Count);
             }
 
+            int[] numbers = new int[] { 8, 2, 3, 4, 7, 6, 2 };
+            // Defining a new stack of int
+            Stack<int> myStack = new Stack<int>();
+
+            Console.WriteLine("the numbers in my array are :");
+            // foreach number in our array
+            foreach(int number in numbers)
+            {
+                //print it
+                Console.Write(number + " ");
+                //push it inot our stack(add)
+                myStack.Push(number);
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("the numbers in reverse :");
+            // as long as our stack is not empty
+            while(myStack.Count > 0)
+            {
+                //Pop it and store it in variable
+                int number = myStack.Pop();
+                // print the value we poped 
+                Console.Write(number + " ");
+            }
 
         }
     }
