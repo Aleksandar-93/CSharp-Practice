@@ -17,10 +17,13 @@ namespace Stacks
             stack.Push(2);
             Console.WriteLine("Top value in the stack is : {0}", stack.Peek());
             stack.Push(3);
-            // remove item Pop() last item added
-            int myStackItem = stack.Pop();
-            Console.WriteLine("Popped Item : {0}", myStackItem);
-            Console.WriteLine("Top value in the stack is : {0}", stack.Peek());
+
+           while (stack.Count > 0) {
+                //pop() will return element that was removed from stack
+                Console.WriteLine("Top top value {0} was removed from the stack", stack.Pop());
+                //print the stack count
+                Console.WriteLine("Current stack count is : {0}", stack.Count);
+            }
 
 
         }
