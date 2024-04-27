@@ -29,7 +29,25 @@ namespace Dictonaries
 
             Dictionary<string,Employee> employeesDirectory = new Dictionary<string, Employee>();
            
+            foreach (Employee emp in employees)
+            {
+                employeesDirectory.Add(emp.Role, emp);
 
+            }
+
+            string key = "CEO";
+
+            if(employeesDirectory.ContainsKey(key))
+            {
+                Employee empl = employeesDirectory["CEO"];
+                Console.WriteLine("Employee Name: {0}, Role: {1}, Salery: {2}", empl.Name, empl.Role, empl.Salery);
+            }
+            else
+            {
+                Console.WriteLine("No employee found with this key{0}", key);
+            }
+
+            
 
         }
     }
